@@ -27,7 +27,8 @@ jobs:
           pip install python-telegram-bot==22.8
           pip install tzdata
 
-      - name: Quiz yuborish
+       - name: Quiz yuborish
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          SCHEDULE_CRON: ${{ github.event.schedule }}
         run: python send_quiz_once.py
