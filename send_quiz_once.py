@@ -12,12 +12,13 @@ TASHKENT = ZoneInfo("Asia/Tashkent")
 START_DATE = date(2026, 10, 6)
 TOTAL_DAYS = 17
 
-POST_TIMES = {
-    9: 0,
-    11: 1,
-    14: 2,
-    16: 3,
-    18: 4,
+# GitHub schedule cron -> quiz slot
+CRON_SLOTS = {
+    "0 4 * * *": 0,   # 09:00 Toshkent
+    "0 6 * * *": 1,   # 11:00 Toshkent
+    "0 9 * * *": 2,   # 14:00 Toshkent
+    "0 11 * * *": 3,  # 16:00 Toshkent
+    "0 13 * * *": 4,  # 18:00 Toshkent
 }
 
 
@@ -35,11 +36,32 @@ async def main():
         print("Quiz muddati tugagan yoki hali boshlanmagan.")
         return
 
-    if now.hour not in POST_TIMES:
-        print(f"Hozirgi vaqt: {now.strftime('%H:%M')}. Quiz vaqti emas.")
-        return
+    # GitHub qaysi cron orqali ishga tushganini olamiz
+    schedule = os.environ.get("SCHEDULE_CRON")
 
-    slot = POST_TIMES[now.hour]
+    if schedule in CRON_SLOTS:
+        slot = CRON_SLOTS[schedule]
+        print(f"Avtomatik schedule aniqlandi: {schedule}")
+    else:
+        # Qo'lda Run workflow qilinganda hozirgi vaqtga qarab aniqlaydi
+        manual_slots = {
+            9: 0,
+            11: 1,
+            14: 2,
+            16: 3,
+            18: 4,
+        }
+
+        if now.hour not in manual_slots:
+            print(
+                f"Hozirgi vaqt: {now.strftime('%H:%M')}. "
+                f"Quiz vaqti emas."
+            )
+            return
+
+        slot = manual_slots[now.hour]
+        print("Qo'lda ishga tushirildi.")
+
     question_index = (day_number - 1) * 5 + slot
 
     if question_index >= len(QUESTIONS):
@@ -61,7 +83,7 @@ async def main():
 
     print(
         f"Quiz yuborildi: {now.strftime('%Y-%m-%d %H:%M')} | "
-        f"{day_number}-kun | {slot + 1}-savol"
+        f"{day_number}-kun | {slot + 1}-slot"
     )
 
 
