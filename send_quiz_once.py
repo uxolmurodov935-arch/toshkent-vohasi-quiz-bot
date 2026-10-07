@@ -5,20 +5,19 @@ from zoneinfo import ZoneInfo
 from telegram import Bot
 from quiz_savollar_17_kun import QUESTIONS
 
-
 CHANNEL = "@toshkent_vohasi"
 TASHKENT = ZoneInfo("Asia/Tashkent")
 
 START_DATE = date(2026, 10, 6)
 TOTAL_DAYS = 17
 
-# GitHub schedule cron -> quiz slot
+# GitHub Actions cron -> quiz slot
 CRON_SLOTS = {
-    "0 4 * * *": 0,   # 09:00 Toshkent
-    "0 6 * * *": 1,   # 11:00 Toshkent
-    "0 9 * * *": 2,   # 14:00 Toshkent
-    "0 11 * * *": 3,  # 16:00 Toshkent
-    "0 13 * * *": 4,  # 18:00 Toshkent
+    "7 4 * * *": 0,   # 09:07 Toshkent
+    "7 6 * * *": 1,   # 11:07 Toshkent
+    "7 9 * * *": 2,   # 14:07 Toshkent
+    "7 11 * * *": 3,  # 16:07 Toshkent
+    "7 13 * * *": 4,  # 18:07 Toshkent
 }
 
 
@@ -36,14 +35,14 @@ async def main():
         print("Quiz muddati tugagan yoki hali boshlanmagan.")
         return
 
-    # GitHub qaysi cron orqali ishga tushganini olamiz
+    # GitHub Actions qaysi cron orqali ishga tushganini aniqlash
     schedule = os.environ.get("SCHEDULE_CRON")
 
     if schedule in CRON_SLOTS:
         slot = CRON_SLOTS[schedule]
         print(f"Avtomatik schedule aniqlandi: {schedule}")
     else:
-        # Qo'lda Run workflow qilinganda hozirgi vaqtga qarab aniqlaydi
+        # Qo'lda Run workflow bosilganda
         manual_slots = {
             9: 0,
             11: 1,
@@ -55,7 +54,7 @@ async def main():
         if now.hour not in manual_slots:
             print(
                 f"Hozirgi vaqt: {now.strftime('%H:%M')}. "
-                f"Quiz vaqti emas."
+                "Quiz vaqti emas."
             )
             return
 
@@ -82,11 +81,14 @@ async def main():
     )
 
     print(
-        f"Quiz yuborildi: {now.strftime('%Y-%m-%d %H:%M')} | "
-        f"{day_number}-kun | {slot + 1}-slot"
+        f"Quiz yuborildi: "
+        f"{now.strftime('%Y-%m-%d %H:%M')} | "
+        f"{day_number}-kun | "
+        f"{slot + 1}-slot"
     )
 
 
 if __name__ == "__main__":
     import asyncio
+
     asyncio.run(main())
