@@ -29,6 +29,7 @@ async def main():
 
     now = datetime.now(TASHKENT)
 
+    # Qaysi kun ekanini aniqlash
     day_number = (now.date() - START_DATE).days + 1
 
     if day_number < 1 or day_number > TOTAL_DAYS:
@@ -41,6 +42,7 @@ async def main():
     if schedule in CRON_SLOTS:
         slot = CRON_SLOTS[schedule]
         print(f"Avtomatik schedule aniqlandi: {schedule}")
+
     else:
         # Qo'lda Run workflow bosilganda
         manual_slots = {
@@ -61,6 +63,7 @@ async def main():
         slot = manual_slots[now.hour]
         print("Qo'lda ishga tushirildi.")
 
+    # 17 kun x 5 ta savol
     question_index = (day_number - 1) * 5 + slot
 
     if question_index >= len(QUESTIONS):
@@ -68,6 +71,20 @@ async def main():
         return
 
     q = QUESTIONS[question_index]
+
+    # To'g'ri javob
+    correct_answer = q["options"][q["correct_option_id"]]
+
+    # Agar savolda explanation bo'lsa, undan foydalanadi.
+    # Hozirgi 85 ta savolda explanation yo'q bo'lsa,
+    # avtomatik izoh yaratadi.
+    explanation = q.get(
+        "explanation",
+        f"💡 To‘g‘ri javob: {correct_answer}."
+    )
+
+    # Telegram explanation 200 belgidan oshmasligi kerak
+    explanation = explanation[:200]
 
     bot = Bot(token=token)
 
@@ -78,6 +95,7 @@ async def main():
         type="quiz",
         correct_option_id=q["correct_option_id"],
         is_anonymous=True,
+        explanation=explanation,
     )
 
     print(
