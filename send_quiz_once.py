@@ -1,112 +1,96 @@
+
 import os
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 from telegram import Bot
-from quiz_savollar_17_kun import QUESTIONS
+from quiz_savollar_30_kun import QUESTIONS
 
 CHANNEL = "@toshkent_vohasi"
 TASHKENT = ZoneInfo("Asia/Tashkent")
 
-START_DATE = date(2026, 10, 6)
-TOTAL_DAYS = 17
+START_DATE = date(2026, 10, 12)
+TOTAL_DAYS = 30
 
-# GitHub Actions cron -> quiz slot
+# GitHub Actions jadvali: UTC -> Toshkent vaqti
 CRON_SLOTS = {
-    "7 4 * * *": 0,   # 09:07 Toshkent
-    "7 6 * * *": 1,   # 11:07 Toshkent
-    "7 9 * * *": 2,   # 14:07 Toshkent
-    "7 11 * * *": 3,  # 16:07 Toshkent
-    "7 13 * * *": 4,  # 18:07 Toshkent
+    "0 4 * * *": 0,   # 09:00
+    "0 8 * * *": 1,   # 13:00
+    "0 12 * * *": 2,  # 17:00
 }
 
 
 async def main():
     token = os.environ.get("BOT_TOKEN")
-
     if not token:
         raise ValueError("BOT_TOKEN topilmadi!")
 
     now = datetime.now(TASHKENT)
-
-    # Qaysi kun ekanini aniqlash
     day_number = (now.date() - START_DATE).days + 1
 
-    if day_number < 1 or day_number > TOTAL_DAYS:
+    if not 1 <= day_number <= TOTAL_DAYS:
         print("Quiz muddati tugagan yoki hali boshlanmagan.")
         return
 
-    # GitHub Actions qaysi cron orqali ishga tushganini aniqlash
     schedule = os.environ.get("SCHEDULE_CRON")
 
     if schedule in CRON_SLOTS:
         slot = CRON_SLOTS[schedule]
-        print(f"Avtomatik schedule aniqlandi: {schedule}")
-
+        print(f"Avtomatik jadval: {schedule}")
     else:
-        # Qo'lda Run workflow bosilganda
+        # Qo'lda ishga tushirganda faqat belgilangan soatlarda yuboradi
         manual_slots = {
             9: 0,
-            11: 1,
-            14: 2,
-            16: 3,
-            18: 4,
+            13: 1,
+            17: 2,
         }
 
         if now.hour not in manual_slots:
             print(
-                f"Hozirgi vaqt: {now.strftime('%H:%M')}. "
-                "Quiz vaqti emas."
+                f"Hozirgi vaqt {now.strftime('%H:%M')}. "
+                "Qo'lda yuborish uchun 09:00, 13:00 yoki 17:00 da ishga tushiring."
             )
             return
 
         slot = manual_slots[now.hour]
         print("Qo'lda ishga tushirildi.")
 
-    # 17 kun x 5 ta savol
-    question_index = (day_number - 1) * 5 + slot
+    # Har kun uchun ketma-ket 3 ta savol
+    question_index = (day_number - 1) * 3 + slot
 
     if question_index >= len(QUESTIONS):
         print("Savollar tugagan.")
         return
 
     q = QUESTIONS[question_index]
+    correct_id = q["correct_option_id"]
+    options = q["options"]
 
-    # To'g'ri javob
-    correct_answer = q["options"][q["correct_option_id"]]
+    if not 0 <= correct_id < len(options):
+        raise ValueError(f"{question_index + 1}-savolda javob indeksi xato.")
 
-    # Agar savolda explanation bo'lsa, undan foydalanadi.
-    # Hozirgi 85 ta savolda explanation yo'q bo'lsa,
-    # avtomatik izoh yaratadi.
     explanation = q.get(
         "explanation",
-        f"💡 To‘g‘ri javob: {correct_answer}."
-    )
-
-    # Telegram explanation 200 belgidan oshmasligi kerak
-    explanation = explanation[:200]
+        f"To'g'ri javob: {options[correct_id]}."
+    )[:200]
 
     bot = Bot(token=token)
-
     await bot.send_poll(
         chat_id=CHANNEL,
         question=q["question"],
-        options=q["options"],
+        options=options,
         type="quiz",
-        correct_option_id=q["correct_option_id"],
+        correct_option_id=correct_id,
         is_anonymous=True,
         explanation=explanation,
     )
 
     print(
-        f"Quiz yuborildi: "
-        f"{now.strftime('%Y-%m-%d %H:%M')} | "
-        f"{day_number}-kun | "
-        f"{slot + 1}-slot"
+        f"Quiz yuborildi: {now:%Y-%m-%d %H:%M} | "
+        f"{day_number}-kun | {slot + 1}-viktorina"
     )
 
 
 if __name__ == "__main__":
     import asyncio
-
     asyncio.run(main())
