@@ -1,4 +1,3 @@
-
 name: Toshkent Vohasi Quiz
 
 on:
@@ -8,26 +7,27 @@ on:
     - cron: "0 12 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   send-quiz:
     runs-on: ubuntu-latest
-
     steps:
       - name: Kodni yuklash
         uses: actions/checkout@v4
-
       - name: Python o'rnatish
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Kutubxonalarni o'rnatish
         run: |
           pip install python-telegram-bot==22.8
           pip install tzdata
-
       - name: Quiz yuborish
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
           SCHEDULE_CRON: ${{ github.event.schedule }}
         run: python send_quiz_once.py
