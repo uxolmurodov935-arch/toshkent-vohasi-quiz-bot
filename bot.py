@@ -1,149 +1,165 @@
 import os
 import json
-import random
 import logging
-from datetime import time
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-import aiohttp
-from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
-
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO,
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import (
+    Application, CommandHandler, CallbackQueryHandler, ContextTypes,
+    MessageHandler, filters,
 )
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 CHANNEL_ID = os.getenv("CHANNEL_ID", "@toshkent_vohasi").strip()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+REPO = os.getenv("GITHUB_REPOSITORY", "uxolmurodov935-arch/toshkent-vohasi-quiz-bot").strip()
 TZ = ZoneInfo("Asia/Tashkent")
-
+START_DATE = date(2026, 10, 12)
+TOTAL_DAYS = 30
 TOPICS = [
-    "Ma’naviyat va ma’rifat",
-    "Tarix",
-    "Umumiy bilim",
-    "Milliy qadriyatlar",
+    "Jadidlar va ma’rifatparvarlar",
+    "Mustaqillik tarixi va davlat ramzlari",
+    "Tarixiy obidalar va buyuk allomalar",
+    "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "Xalq maqollari va milliy meros",
 ]
+ARCHIVE_URL = f"https://raw.githubusercontent.com/{REPO}/main/archive.json"
 
-FALLBACK_QUESTIONS = [
-    {
-        "topic": "Tarix",
-        "question": "O‘zbekiston Respublikasi Konstitutsiyasi qachon qabul qilingan?",
-        "options": ["1991-yil 31-avgust", "1992-yil 8-dekabr", "1993-yil 1-sentabr", "1995-yil 9-may"],
-        "correct": 1,
-        "explanation": "O‘zbekiston Respublikasi Konstitutsiyasi 1992-yil 8-dekabrda qabul qilingan."
-    },
-    {
-        "topic": "Milliy qadriyatlar",
-        "question": "Navro‘z bayrami odatda qaysi sanada nishonlanadi?",
-        "options": ["1-yanvar", "8-mart", "21-mart", "9-may"],
-        "correct": 2,
-        "explanation": "Navro‘z bahorgi tengkunlik — 21-mart kuni nishonlanadi."
-    },
-    {
-        "topic": "Umumiy bilim",
-        "question": "Yerning tabiiy yo‘ldoshi nima?",
-        "options": ["Quyosh", "Oy", "Mars", "Venera"],
-        "correct": 1,
-        "explanation": "Oyning o‘zi emas, Yerning tabiiy yo‘ldoshi — Oy hisoblanadi."
-    },
-    {
-        "topic": "Ma’naviyat va ma’rifat",
-        "question": "Kitob mutolaasi insonda, avvalo, nimani rivojlantiradi?",
-        "options": ["Bilim va tafakkurni", "Faqat jismoniy kuchni", "Uyquni", "Tez yugurishni"],
-        "correct": 0,
-        "explanation": "Mutolaa bilimni, dunyoqarashni, tafakkur va nutq boyligini rivojlantirishga yordam beradi."
-    },
-]
 
-async def generate_with_gemini():
-    prompt = f"""
-O‘zbek tilida bitta sifatli viktorina savoli tuz.
-Mavzu: {random.choice(TOPICS)}
-Savol aniq va faktlarga asoslangan bo‘lsin.
-4 ta javob varianti bo‘lsin, faqat bittasi to‘g‘ri.
-Quyidagi JSON formatidan qat’iy foydalan:
-{{
-  "topic": "mavzu",
-  "question": "savol",
-  "options": ["A", "B", "C", "D"],
-  "correct": 0,
-  "explanation": "1-2 jumlalik izoh"
-}}
-"correct" 0 dan 3 gacha bo‘lgan indeks bo‘lsin. Hech qanday qo‘shimcha matn yozma.
-"""
-    url = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
-    )
-    async with aiohttp.ClientSession() as session:
-        async with session.post(
-            url,
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=45,
-        ) as response:
-            response.raise_for_status()
-            data = await response.json()
-            text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-            text = text.replace("```json", "").replace("```", "").strip()
-            return json.loads(text)
+def main_menu():
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton("📚 Viktorinalar arxivi", callback_data="archive:0")],
+        [InlineKeyboardButton("📅 Sana bo‘yicha qidirish", callback_data="search:date")],
+        [InlineKeyboardButton("🔎 Mavzu bo‘yicha qidirish", callback_data="search:topic")],
+        [InlineKeyboardButton("🗓 Kelgusi viktorinalar", callback_data="future:0")],
+        [InlineKeyboardButton("ℹ️ Yordam", callback_data="help")],
+    ])
 
-async def get_question():
-    if GEMINI_API_KEY:
-        try:
-            question = await generate_with_gemini()
-            if (
-                isinstance(question, dict)
-                and len(question.get("options", [])) == 4
-                and 0 <= int(question.get("correct", -1)) <= 3
-            ):
-                return question
-        except Exception:
-            logging.exception("AI savol yaratishda xatolik; zaxira savol ishlatiladi.")
-    return random.choice(FALLBACK_QUESTIONS)
-
-async def post_quiz(context: ContextTypes.DEFAULT_TYPE):
-    q = await get_question()
-    explanation = q.get("explanation", "")
-    correct = int(q["correct"])
-    question_text = f"🧠 BUGUNGI VIKTORINA\n\n📚 Mavzu: {q.get('topic', 'Umumiy bilim')}\n\n❓ {q['question']}"
-    message = await context.bot.send_poll(
-        chat_id=CHANNEL_ID,
-        question=question_text,
-        options=q["options"],
-        type="quiz",
-        correct_option_id=correct,
-        is_anonymous=True,
-        explanation=explanation[:200],
-    )
-    logging.info("Viktorina joylandi: %s", message.message_id)
+async def load_archive():
+    # Use GitHub raw file; no extra Python HTTP dependency needed.
+    import urllib.request
+    try:
+        with urllib.request.urlopen(ARCHIVE_URL, timeout=10) as response:
+            data = json.loads(response.read().decode("utf-8"))
+        return data if isinstance(data, list) else []
+    except Exception as exc:
+        logging.warning("Arxivni yuklab bo‘lmadi: %s", exc)
+        return []
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Bot ishlayapti. Har kuni 09:00, 11:00, 14:00, 16:00 va 18:00 da viktorina joylanadi."
+        "Assalomu alaykum! 📚 Toshkent Vohasi viktorina botiga xush kelibsiz.\n\nKerakli bo‘limni tanlang:",
+        reply_markup=main_menu(),
     )
 
-async def test(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await post_quiz(context)
-    await update.message.reply_text("Sinov viktorinasi kanalga joylandi.")
+async def show_archive(query, page=0, items=None):
+    if items is None:
+        items = await load_archive()
+    items = sorted(items, key=lambda x: (x.get("date", ""), x.get("time", "")), reverse=True)
+    page_size = 5
+    selected = items[page*page_size:(page+1)*page_size]
+    if not selected:
+        text = "📚 Arxiv hozircha bo‘sh. Yangi viktorinalar yuborilgach, ular shu yerda paydo bo‘ladi."
+        keyboard = [[InlineKeyboardButton("⬅️ Menyu", callback_data="menu")]]
+    else:
+        lines = ["📚 **Viktorinalar arxivi**\n"]
+        keyboard = []
+        for item in selected:
+            lines.append(f"• {item.get('date','—')} {item.get('time','')} — {item.get('topic','Viktorina')}\n  {item.get('question','')}")
+            if item.get("url"):
+                keyboard.append([InlineKeyboardButton("🔗 Ochish: " + item.get("date", "Viktorina"), url=item["url"])])
+        nav=[]
+        if page > 0: nav.append(InlineKeyboardButton("⬅️ Oldingi", callback_data=f"archive:{page-1}"))
+        if (page+1)*page_size < len(items): nav.append(InlineKeyboardButton("Keyingi ➡️", callback_data=f"archive:{page+1}"))
+        if nav: keyboard.append(nav)
+        keyboard.append([InlineKeyboardButton("⬅️ Menyu", callback_data="menu")])
+        text="\n\n".join(lines)
+    await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown", disable_web_page_preview=True)
+
+async def show_future(query, page=0):
+    now = datetime.now(TZ)
+    entries=[]
+    for d in range(TOTAL_DAYS):
+        day = START_DATE + timedelta(days=d)
+        if day < now.date():
+            continue
+        for hour in (9, 13, 17):
+            dt = datetime(day.year, day.month, day.day, hour, 0, tzinfo=TZ)
+            if dt <= now:
+                continue
+            topic = TOPICS[min((d*3 + (0 if hour==9 else 1 if hour==13 else 2)) // 18, len(TOPICS)-1)]
+            entries.append((dt, topic))
+    page_size=6
+    selected=entries[page*page_size:(page+1)*page_size]
+    if not selected:
+        text="🗓 Hozircha kelgusi viktorina qolmagan."
+        keyboard=[[InlineKeyboardButton("⬅️ Menyu", callback_data="menu")]]
+    else:
+        text="🗓 **Kelgusi viktorinalar**\n\n" + "\n".join(f"• {dt:%d.%m.%Y %H:%M} — {topic}" for dt,topic in selected)
+        nav=[]
+        if page>0: nav.append(InlineKeyboardButton("⬅️ Oldingi", callback_data=f"future:{page-1}"))
+        if (page+1)*page_size < len(entries): nav.append(InlineKeyboardButton("Keyingi ➡️", callback_data=f"future:{page+1}"))
+        keyboard=[nav] if nav else []
+        keyboard.append([InlineKeyboardButton("⬅️ Menyu", callback_data="menu")])
+    await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+
+async def callbacks(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query=update.callback_query
+    await query.answer()
+    data=query.data or ""
+    if data == "menu":
+        await query.edit_message_text("Asosiy menyu. Bo‘limni tanlang:", reply_markup=main_menu())
+    elif data.startswith("archive:"):
+        await show_archive(query, int(data.split(":")[1]))
+    elif data.startswith("future:"):
+        await show_future(query, int(data.split(":")[1]))
+    elif data == "search:date":
+        context.user_data["search_mode"]="date"
+        await query.edit_message_text("📅 Sanani DD.MM.YYYY shaklida yuboring. Masalan: 12.10.2026", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Menyu", callback_data="menu")]]))
+    elif data == "search:topic":
+        rows=[[InlineKeyboardButton(t, callback_data=f"topic:{i}")] for i,t in enumerate(TOPICS)]
+        rows.append([InlineKeyboardButton("⬅️ Menyu", callback_data="menu")])
+        await query.edit_message_text("🔎 Qaysi mavzudagi viktorinalarni ko‘rmoqchisiz?", reply_markup=InlineKeyboardMarkup(rows))
+    elif data.startswith("topic:"):
+        topic=TOPICS[int(data.split(":")[1])]
+        items=await load_archive()
+        matches=[x for x in items if topic.lower() in x.get("topic", "").lower()]
+        await show_archive(query, 0, matches)
+    elif data == "help":
+        await query.edit_message_text("📚 Arxiv — o‘tkazilgan viktorinalar va post havolalari.\n📅 Sana bo‘yicha qidirish uchun DD.MM.YYYY yuboring.\n🔎 Mavzu bo‘yicha qidirish — mavzuni tanlang.\n🗓 Kelgusi viktorinalar — rejalashtirilgan vaqtlar.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Menyu", callback_data="menu")]]))
+
+async def text_search(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if context.user_data.get("search_mode") != "date":
+        return
+    context.user_data.pop("search_mode", None)
+    raw=(update.message.text or "").strip()
+    try:
+        target=datetime.strptime(raw, "%d.%m.%Y").date().isoformat()
+    except ValueError:
+        await update.message.reply_text("Sana formati noto‘g‘ri. Masalan: 12.10.2026", reply_markup=main_menu())
+        return
+    items=await load_archive()
+    matches=[x for x in items if x.get("date", "") == target]
+    if not matches:
+        await update.message.reply_text(f"{raw} sanasi uchun arxivda viktorina topilmadi.", reply_markup=main_menu())
+        return
+    lines=[f"📅 {raw} sanasidagi viktorinalar:\n"]
+    buttons=[]
+    for item in matches:
+        lines.append(f"• {item.get('time','')} — {item.get('topic','Viktorina')}\n{item.get('question','')}")
+        if item.get("url"):
+            buttons.append([InlineKeyboardButton("🔗 Kanal postini ochish", url=item["url"])])
+    buttons.append([InlineKeyboardButton("⬅️ Menyu", callback_data="menu")])
+    await update.message.reply_text("\n\n".join(lines), reply_markup=InlineKeyboardMarkup(buttons))
 
 def main():
     if not BOT_TOKEN:
         raise RuntimeError("BOT_TOKEN muhit o‘zgaruvchisi kiritilmagan.")
-
-    app = Application.builder().token(BOT_TOKEN).build()
+    app=Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("test", test))
-
-    # Asia/Tashkent vaqtida har kuni 5 ta post
-    for hour in [9, 11, 14, 16, 18]:
-        app.job_queue.run_daily(
-            post_quiz,
-            time=time(hour=hour, minute=0, tzinfo=TZ),
-            name=f"quiz_{hour}",
-        )
-
+    app.add_handler(CallbackQueryHandler(callbacks))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, text_search))
     app.run_polling()
 
 if __name__ == "__main__":
