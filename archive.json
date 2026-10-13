@@ -18,5 +18,15 @@
     "message_id": 7532,
     "day": 2,
     "slot": 3
+  },
+  {
+    "date": "2026-10-13",
+    "time": "16:20",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "“Usuli jadid” atamasi nimani anglatadi?",
+    "url": "https://t.me/toshkent_vohasi/7534",
+    "message_id": 7534,
+    "day": 2,
+    "slot": 1
   }
 ]
