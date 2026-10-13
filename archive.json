@@ -28,5 +28,15 @@
     "message_id": 7534,
     "day": 2,
     "slot": 1
+  },
+  {
+    "date": "2026-10-13",
+    "time": "20:50",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "“Munozara” asari bilan tanilgan ma’rifatparvar kim?",
+    "url": "https://t.me/toshkent_vohasi/7535",
+    "message_id": 7535,
+    "day": 2,
+    "slot": 2
   }
 ]
