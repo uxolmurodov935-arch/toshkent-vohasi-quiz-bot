@@ -48,5 +48,15 @@
     "message_id": 7536,
     "day": 2,
     "slot": 3
+  },
+  {
+    "date": "2026-10-14",
+    "time": "14:13",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Jadid matbuoti asosan nima uchun xizmat qilgan?",
+    "url": "https://t.me/toshkent_vohasi/7538",
+    "message_id": 7538,
+    "day": 3,
+    "slot": 1
   }
 ]
