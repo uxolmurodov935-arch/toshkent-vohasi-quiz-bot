@@ -58,5 +58,15 @@
     "message_id": 7538,
     "day": 3,
     "slot": 1
+  },
+  {
+    "date": "2026-10-14",
+    "time": "18:34",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Cho‘lponning asl ismi qaysi?",
+    "url": "https://t.me/toshkent_vohasi/7540",
+    "message_id": 7540,
+    "day": 3,
+    "slot": 2
   }
 ]
