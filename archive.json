@@ -68,5 +68,15 @@
     "message_id": 7540,
     "day": 3,
     "slot": 2
+  },
+  {
+    "date": "2026-10-14",
+    "time": "21:11",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "“Kecha va kunduz” romanini kim yozgan?",
+    "url": "https://t.me/toshkent_vohasi/7541",
+    "message_id": 7541,
+    "day": 3,
+    "slot": 3
   }
 ]
