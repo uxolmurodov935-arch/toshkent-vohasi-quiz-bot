@@ -98,5 +98,15 @@
     "message_id": 7557,
     "day": 4,
     "slot": 2
+  },
+  {
+    "date": "2026-10-15",
+    "time": "20:59",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Jadidlar ta’limga qaysi yondashuvni kiritishga intilgan?",
+    "url": "https://t.me/toshkent_vohasi/7558",
+    "message_id": 7558,
+    "day": 4,
+    "slot": 3
   }
 ]
