@@ -78,5 +78,15 @@
     "message_id": 7541,
     "day": 3,
     "slot": 3
+  },
+  {
+    "date": "2026-10-15",
+    "time": "13:45",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Jadidlar teatrni qanday maqsadda qo‘llagan?",
+    "url": "https://t.me/toshkent_vohasi/7545",
+    "message_id": 7545,
+    "day": 4,
+    "slot": 1
   }
 ]
