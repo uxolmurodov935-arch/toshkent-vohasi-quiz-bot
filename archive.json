@@ -88,5 +88,15 @@
     "message_id": 7545,
     "day": 4,
     "slot": 1
+  },
+  {
+    "date": "2026-10-15",
+    "time": "18:18",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Munavvarqori Abdurashidxonov qaysi faoliyati bilan tanilgan?",
+    "url": "https://t.me/toshkent_vohasi/7557",
+    "message_id": 7557,
+    "day": 4,
+    "slot": 2
   }
 ]
