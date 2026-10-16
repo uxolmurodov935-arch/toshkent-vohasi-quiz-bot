@@ -108,5 +108,15 @@
     "message_id": 7558,
     "day": 4,
     "slot": 3
+  },
+  {
+    "date": "2026-10-16",
+    "time": "13:41",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Hamza Hakimzoda Niyoziy qaysi yo‘nalishlarda faoliyat yuritgan?",
+    "url": "https://t.me/toshkent_vohasi/7569",
+    "message_id": 7569,
+    "day": 5,
+    "slot": 1
   }
 ]
