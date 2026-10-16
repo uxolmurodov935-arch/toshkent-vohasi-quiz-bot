@@ -128,5 +128,15 @@
     "message_id": 7577,
     "day": 5,
     "slot": 2
+  },
+  {
+    "date": "2026-10-16",
+    "time": "20:48",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Turkiston jadidchiligi qaysi davrda shakllanib rivojlangan?",
+    "url": "https://t.me/toshkent_vohasi/7578",
+    "message_id": 7578,
+    "day": 5,
+    "slot": 3
   }
 ]
