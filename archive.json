@@ -118,5 +118,15 @@
     "message_id": 7569,
     "day": 5,
     "slot": 1
+  },
+  {
+    "date": "2026-10-16",
+    "time": "18:09",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Fitratning “Abulfayzxon” asari qaysi janrda yozilgan?",
+    "url": "https://t.me/toshkent_vohasi/7577",
+    "message_id": 7577,
+    "day": 5,
+    "slot": 2
   }
 ]
