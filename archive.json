@@ -148,5 +148,15 @@
     "message_id": 7579,
     "day": 6,
     "slot": 1
+  },
+  {
+    "date": "2026-10-17",
+    "time": "17:05",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Jadid maktablarida savod o‘rgatishning yangicha usullari nima uchun kerak edi?",
+    "url": "https://t.me/toshkent_vohasi/7581",
+    "message_id": 7581,
+    "day": 6,
+    "slot": 2
   }
 ]
