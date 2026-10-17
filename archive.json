@@ -138,5 +138,15 @@
     "message_id": 7578,
     "day": 5,
     "slot": 3
+  },
+  {
+    "date": "2026-10-17",
+    "time": "13:11",
+    "topic": "Jadidlar va ma’rifatparvarlar",
+    "question": "Jadidlar nazarida millat taraqqiyotining muhim omili nima edi?",
+    "url": "https://t.me/toshkent_vohasi/7579",
+    "message_id": 7579,
+    "day": 6,
+    "slot": 1
   }
 ]
