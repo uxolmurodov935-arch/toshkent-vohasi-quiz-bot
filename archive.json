@@ -188,5 +188,15 @@
     "message_id": 7601,
     "day": 7,
     "slot": 2
+  },
+  {
+    "date": "2026-10-18",
+    "time": "20:07",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Davlat gerbi qachon tasdiqlangan?",
+    "url": "https://t.me/toshkent_vohasi/7602",
+    "message_id": 7602,
+    "day": 7,
+    "slot": 3
   }
 ]
