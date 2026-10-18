@@ -178,5 +178,15 @@
     "message_id": 7599,
     "day": 7,
     "slot": 1
+  },
+  {
+    "date": "2026-10-18",
+    "time": "17:33",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekiston Davlat bayrog‘i qachon qabul qilingan?",
+    "url": "https://t.me/toshkent_vohasi/7601",
+    "message_id": 7601,
+    "day": 7,
+    "slot": 2
   }
 ]
