@@ -168,5 +168,15 @@
     "message_id": 7582,
     "day": 6,
     "slot": 3
+  },
+  {
+    "date": "2026-10-18",
+    "time": "13:28",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekiston davlat mustaqilligi qachon e’lon qilingan?",
+    "url": "https://t.me/toshkent_vohasi/7599",
+    "message_id": 7599,
+    "day": 7,
+    "slot": 1
   }
 ]
