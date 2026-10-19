@@ -208,5 +208,15 @@
     "message_id": 7621,
     "day": 8,
     "slot": 1
+  },
+  {
+    "date": "2026-10-19",
+    "time": "20:29",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Mustaqil O‘zbekistonning birinchi Konstitutsiyasi qachon qabul qilingan?",
+    "url": "https://t.me/toshkent_vohasi/7622",
+    "message_id": 7622,
+    "day": 8,
+    "slot": 2
   }
 ]
