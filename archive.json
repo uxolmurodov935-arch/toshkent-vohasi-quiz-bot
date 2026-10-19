@@ -218,5 +218,15 @@
     "message_id": 7622,
     "day": 8,
     "slot": 2
+  },
+  {
+    "date": "2026-10-19",
+    "time": "22:59",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Davlat madhiyasi matnini kim yozgan?",
+    "url": "https://t.me/toshkent_vohasi/7623",
+    "message_id": 7623,
+    "day": 8,
+    "slot": 3
   }
 ]
