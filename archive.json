@@ -238,5 +238,15 @@
     "message_id": 7624,
     "day": 9,
     "slot": 1
+  },
+  {
+    "date": "2026-10-20",
+    "time": "18:30",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekiston Respublikasining davlat tili qaysi?",
+    "url": "https://t.me/toshkent_vohasi/7625",
+    "message_id": 7625,
+    "day": 9,
+    "slot": 2
   }
 ]
