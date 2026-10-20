@@ -248,5 +248,15 @@
     "message_id": 7625,
     "day": 9,
     "slot": 2
+  },
+  {
+    "date": "2026-10-20",
+    "time": "21:03",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbek tiliga davlat tili maqomi qachon berilgan?",
+    "url": "https://t.me/toshkent_vohasi/7637",
+    "message_id": 7637,
+    "day": 9,
+    "slot": 3
   }
 ]
