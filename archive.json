@@ -228,5 +228,15 @@
     "message_id": 7623,
     "day": 8,
     "slot": 3
+  },
+  {
+    "date": "2026-10-20",
+    "time": "14:03",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Davlat madhiyasi musiqasini kim bastalagan?",
+    "url": "https://t.me/toshkent_vohasi/7624",
+    "message_id": 7624,
+    "day": 9,
+    "slot": 1
   }
 ]
