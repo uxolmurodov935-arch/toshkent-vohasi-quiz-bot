@@ -278,5 +278,15 @@
     "message_id": 7658,
     "day": 10,
     "slot": 2
+  },
+  {
+    "date": "2026-10-21",
+    "time": "21:20",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekiston bayrog‘ida nechta yulduz bor?",
+    "url": "https://t.me/toshkent_vohasi/7660",
+    "message_id": 7660,
+    "day": 10,
+    "slot": 3
   }
 ]
