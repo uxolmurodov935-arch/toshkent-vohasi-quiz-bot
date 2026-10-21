@@ -268,5 +268,15 @@
     "message_id": 7651,
     "day": 10,
     "slot": 1
+  },
+  {
+    "date": "2026-10-21",
+    "time": "18:40",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Bayroqdagi yarim oy va yulduzlar qaysi rangli maydonda joylashgan?",
+    "url": "https://t.me/toshkent_vohasi/7658",
+    "message_id": 7658,
+    "day": 10,
+    "slot": 2
   }
 ]
