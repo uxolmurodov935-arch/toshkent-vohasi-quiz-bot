@@ -258,5 +258,15 @@
     "message_id": 7637,
     "day": 9,
     "slot": 3
+  },
+  {
+    "date": "2026-10-21",
+    "time": "14:03",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Mustaqillik kuni qaysi sanada nishonlanadi?",
+    "url": "https://t.me/toshkent_vohasi/7651",
+    "message_id": 7651,
+    "day": 10,
+    "slot": 1
   }
 ]
