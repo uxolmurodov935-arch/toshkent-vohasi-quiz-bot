@@ -288,5 +288,15 @@
     "message_id": 7660,
     "day": 10,
     "slot": 3
+  },
+  {
+    "date": "2026-10-22",
+    "time": "14:05",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Davlat gerbida qaysi afsonaviy qush tasvirlangan?",
+    "url": "https://t.me/toshkent_vohasi/7661",
+    "message_id": 7661,
+    "day": 11,
+    "slot": 1
   }
 ]
