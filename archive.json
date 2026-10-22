@@ -308,5 +308,15 @@
     "message_id": 7672,
     "day": 11,
     "slot": 2
+  },
+  {
+    "date": "2026-10-22",
+    "time": "21:19",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekistonning milliy valyutasi so‘m qachon muomalaga kiritilgan?",
+    "url": "https://t.me/toshkent_vohasi/7673",
+    "message_id": 7673,
+    "day": 11,
+    "slot": 3
   }
 ]
