@@ -328,5 +328,15 @@
     "message_id": 7675,
     "day": 12,
     "slot": 1
+  },
+  {
+    "date": "2026-10-23",
+    "time": "18:17",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Konstitutsiyaning yangi tahriri referendum asosida qaysi yilda qabul qilingan?",
+    "url": "https://t.me/toshkent_vohasi/7676",
+    "message_id": 7676,
+    "day": 12,
+    "slot": 2
   }
 ]
