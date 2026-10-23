@@ -318,5 +318,15 @@
     "message_id": 7673,
     "day": 11,
     "slot": 3
+  },
+  {
+    "date": "2026-10-23",
+    "time": "14:00",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "O‘zbekiston BMTga qachon a’zo bo‘lgan?",
+    "url": "https://t.me/toshkent_vohasi/7675",
+    "message_id": 7675,
+    "day": 12,
+    "slot": 1
   }
 ]
