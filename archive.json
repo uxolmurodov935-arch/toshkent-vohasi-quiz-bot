@@ -338,5 +338,15 @@
     "message_id": 7676,
     "day": 12,
     "slot": 2
+  },
+  {
+    "date": "2026-10-23",
+    "time": "21:08",
+    "topic": "Mustaqillik tarixi va davlat ramzlari",
+    "question": "Bayroqdagi oq rang an’anaviy talqinda qaysi g‘oya bilan bog‘lanadi?",
+    "url": "https://t.me/toshkent_vohasi/7677",
+    "message_id": 7677,
+    "day": 12,
+    "slot": 3
   }
 ]
