@@ -348,5 +348,15 @@
     "message_id": 7677,
     "day": 12,
     "slot": 3
+  },
+  {
+    "date": "2026-10-24",
+    "time": "13:33",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Registon maydoni qaysi shaharda joylashgan?",
+    "url": "https://t.me/toshkent_vohasi/7685",
+    "message_id": 7685,
+    "day": 13,
+    "slot": 1
   }
 ]
