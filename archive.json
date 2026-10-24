@@ -358,5 +358,15 @@
     "message_id": 7685,
     "day": 13,
     "slot": 1
+  },
+  {
+    "date": "2026-10-24",
+    "time": "17:36",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Ichan qal’a qaysi shaharning tarixiy qismidir?",
+    "url": "https://t.me/toshkent_vohasi/7687",
+    "message_id": 7687,
+    "day": 13,
+    "slot": 2
   }
 ]
