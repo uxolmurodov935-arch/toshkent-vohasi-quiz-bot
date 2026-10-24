@@ -368,5 +368,15 @@
     "message_id": 7687,
     "day": 13,
     "slot": 2
+  },
+  {
+    "date": "2026-10-24",
+    "time": "20:05",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Gur Amir maqbarasi qaysi tarixiy shaxs bilan bog‘liq?",
+    "url": "https://t.me/toshkent_vohasi/7689",
+    "message_id": 7689,
+    "day": 13,
+    "slot": 3
   }
 ]
