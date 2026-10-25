@@ -378,5 +378,15 @@
     "message_id": 7689,
     "day": 13,
     "slot": 3
+  },
+  {
+    "date": "2026-10-25",
+    "time": "13:53",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Mirzo Ulug‘bek qaysi ilm sohasi bilan ayniqsa mashhur?",
+    "url": "https://t.me/toshkent_vohasi/7691",
+    "message_id": 7691,
+    "day": 14,
+    "slot": 1
   }
 ]
