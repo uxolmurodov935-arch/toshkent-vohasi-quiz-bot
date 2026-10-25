@@ -398,5 +398,15 @@
     "message_id": 7692,
     "day": 14,
     "slot": 2
+  },
+  {
+    "date": "2026-10-25",
+    "time": "20:17",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "“Tib qonunlari” asarining muallifi kim?",
+    "url": "https://t.me/toshkent_vohasi/7693",
+    "message_id": 7693,
+    "day": 14,
+    "slot": 3
   }
 ]
