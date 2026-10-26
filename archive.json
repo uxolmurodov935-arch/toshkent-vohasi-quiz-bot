@@ -428,5 +428,15 @@
     "message_id": 7705,
     "day": 15,
     "slot": 2
+  },
+  {
+    "date": "2026-10-26",
+    "time": "22:57",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Bahouddin Naqşband qaysi şahar atrofi bilan boġliq?",
+    "url": "https://t.me/toshkent_vohasi/7706",
+    "message_id": 7706,
+    "day": 15,
+    "slot": 3
   }
 ]
