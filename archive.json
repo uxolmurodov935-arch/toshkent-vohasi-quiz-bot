@@ -418,5 +418,15 @@
     "message_id": 7702,
     "day": 15,
     "slot": 1
+  },
+  {
+    "date": "2026-10-26",
+    "time": "20:05",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Ahmad al-Farġoniy qaysi sohalarda tanilgan?",
+    "url": "https://t.me/toshkent_vohasi/7705",
+    "message_id": 7705,
+    "day": 15,
+    "slot": 2
   }
 ]
