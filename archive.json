@@ -438,5 +438,15 @@
     "message_id": 7706,
     "day": 15,
     "slot": 3
+  },
+  {
+    "date": "2026-10-27",
+    "time": "14:31",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Şohi Zinda majmuasi qaysi şaharda joylaşgan?",
+    "url": "https://t.me/toshkent_vohasi/7708",
+    "message_id": 7708,
+    "day": 16,
+    "slot": 1
   }
 ]
