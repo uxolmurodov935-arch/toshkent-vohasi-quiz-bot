@@ -448,5 +448,15 @@
     "message_id": 7708,
     "day": 16,
     "slot": 1
+  },
+  {
+    "date": "2026-10-27",
+    "time": "19:18",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Ark qal’asi qaysi şaharning maşhur tarixiy obidasi?",
+    "url": "https://t.me/toshkent_vohasi/7709",
+    "message_id": 7709,
+    "day": 16,
+    "slot": 2
   }
 ]
