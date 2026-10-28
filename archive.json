@@ -468,5 +468,15 @@
     "message_id": 7711,
     "day": 16,
     "slot": 3
+  },
+  {
+    "date": "2026-10-28",
+    "time": "15:16",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Alişer Navoiyning “Xamsa”si neçta dostondan iborat?",
+    "url": "https://t.me/toshkent_vohasi/7712",
+    "message_id": 7712,
+    "day": 17,
+    "slot": 1
   }
 ]
