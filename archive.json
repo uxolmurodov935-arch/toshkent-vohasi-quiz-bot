@@ -478,5 +478,15 @@
     "message_id": 7712,
     "day": 17,
     "slot": 1
+  },
+  {
+    "date": "2026-10-28",
+    "time": "20:00",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "“Boburnoma” asarining muallifi kim?",
+    "url": "https://t.me/toshkent_vohasi/7713",
+    "message_id": 7713,
+    "day": 17,
+    "slot": 2
   }
 ]
