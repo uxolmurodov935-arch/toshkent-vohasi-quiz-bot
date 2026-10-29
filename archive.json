@@ -508,5 +508,15 @@
     "message_id": 7716,
     "day": 18,
     "slot": 1
+  },
+  {
+    "date": "2026-10-29",
+    "time": "20:08",
+    "topic": "Tarixiy obidalar va buyuk allomalar",
+    "question": "Oqsaroy me’moriy yodgorligi qaysi şaharda joylaşgan?",
+    "url": "https://t.me/toshkent_vohasi/7717",
+    "message_id": 7717,
+    "day": 18,
+    "slot": 2
   }
 ]
