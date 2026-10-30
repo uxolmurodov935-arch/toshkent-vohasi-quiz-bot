@@ -538,5 +538,15 @@
     "message_id": 7721,
     "day": 19,
     "slot": 1
+  },
+  {
+    "date": "2026-10-30",
+    "time": "19:58",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Haşar an’anasi nimani ifodalaydi?",
+    "url": "https://t.me/toshkent_vohasi/7722",
+    "message_id": 7722,
+    "day": 19,
+    "slot": 2
   }
 ]
