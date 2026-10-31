@@ -578,5 +578,15 @@
     "message_id": 7729,
     "day": 20,
     "slot": 2
+  },
+  {
+    "date": "2026-10-31",
+    "time": "21:33",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Kattalarga salom beriş va hurmat körsatiş nimani ifodalaydi?",
+    "url": "https://t.me/toshkent_vohasi/7730",
+    "message_id": 7730,
+    "day": 20,
+    "slot": 3
   }
 ]
