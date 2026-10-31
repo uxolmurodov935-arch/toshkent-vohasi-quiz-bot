@@ -568,5 +568,15 @@
     "message_id": 7727,
     "day": 20,
     "slot": 1
+  },
+  {
+    "date": "2026-10-31",
+    "time": "19:27",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Mahalla an’anaviy hayotda qanday vazifani bajargan?",
+    "url": "https://t.me/toshkent_vohasi/7729",
+    "message_id": 7729,
+    "day": 20,
+    "slot": 2
   }
 ]
