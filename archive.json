@@ -558,5 +558,15 @@
     "message_id": 7723,
     "day": 19,
     "slot": 3
+  },
+  {
+    "date": "2026-10-31",
+    "time": "15:07",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Navröz bilan boġliq an’anaviy taom qaysi?",
+    "url": "https://t.me/toshkent_vohasi/7727",
+    "message_id": 7727,
+    "day": 20,
+    "slot": 1
   }
 ]
