@@ -608,5 +608,15 @@
     "message_id": 7732,
     "day": 21,
     "slot": 2
+  },
+  {
+    "date": "2026-11-01",
+    "time": "22:25",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Dutor qaysi turdagi çolġu?",
+    "url": "https://t.me/toshkent_vohasi/7733",
+    "message_id": 7733,
+    "day": 21,
+    "slot": 3
   }
 ]
