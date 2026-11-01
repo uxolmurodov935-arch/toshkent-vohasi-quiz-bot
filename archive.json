@@ -598,5 +598,15 @@
     "message_id": 7731,
     "day": 21,
     "slot": 1
+  },
+  {
+    "date": "2026-11-01",
+    "time": "19:55",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Kelin salom marosimining mazmuni nima?",
+    "url": "https://t.me/toshkent_vohasi/7732",
+    "message_id": 7732,
+    "day": 21,
+    "slot": 2
   }
 ]
