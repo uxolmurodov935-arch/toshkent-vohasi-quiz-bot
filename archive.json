@@ -588,5 +588,15 @@
     "message_id": 7730,
     "day": 20,
     "slot": 3
+  },
+  {
+    "date": "2026-11-01",
+    "time": "15:58",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Beşik töyi qaysi voqea bilan boġliq?",
+    "url": "https://t.me/toshkent_vohasi/7731",
+    "message_id": 7731,
+    "day": 21,
+    "slot": 1
   }
 ]
