@@ -628,5 +628,15 @@
     "message_id": 7736,
     "day": 22,
     "slot": 1
+  },
+  {
+    "date": "2026-11-02",
+    "time": "23:08",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Atlas va adras qaysi hunarmandçilik turi bilan boġliq?",
+    "url": "https://t.me/toshkent_vohasi/7737",
+    "message_id": 7737,
+    "day": 22,
+    "slot": 2
   }
 ]
