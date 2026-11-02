@@ -618,5 +618,15 @@
     "message_id": 7733,
     "day": 21,
     "slot": 3
+  },
+  {
+    "date": "2026-11-02",
+    "time": "16:56",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Doira qaysi çolġu turiga kiradi?",
+    "url": "https://t.me/toshkent_vohasi/7736",
+    "message_id": 7736,
+    "day": 22,
+    "slot": 1
   }
 ]
