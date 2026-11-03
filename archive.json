@@ -648,5 +648,15 @@
     "message_id": 7738,
     "day": 23,
     "slot": 3
+  },
+  {
+    "date": "2026-11-03",
+    "time": "16:32",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Sumalakning asosiy xomaşyosi nima?",
+    "url": "https://t.me/toshkent_vohasi/7744",
+    "message_id": 7744,
+    "day": 23,
+    "slot": 1
   }
 ]
