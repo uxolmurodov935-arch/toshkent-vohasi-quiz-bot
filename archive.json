@@ -668,5 +668,15 @@
     "message_id": 7745,
     "day": 23,
     "slot": 2
+  },
+  {
+    "date": "2026-11-03",
+    "time": "23:50",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "“Kattaga hurmat, kiçikka izzat” iborasi nimani tarġib qiladi?",
+    "url": "https://t.me/toshkent_vohasi/7746",
+    "message_id": 7746,
+    "day": 23,
+    "slot": 3
   }
 ]
