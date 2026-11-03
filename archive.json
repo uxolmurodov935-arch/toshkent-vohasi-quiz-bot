@@ -658,5 +658,15 @@
     "message_id": 7744,
     "day": 23,
     "slot": 1
+  },
+  {
+    "date": "2026-11-03",
+    "time": "21:03",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Kulolning asosiy işi nima?",
+    "url": "https://t.me/toshkent_vohasi/7745",
+    "message_id": 7745,
+    "day": 23,
+    "slot": 2
   }
 ]
