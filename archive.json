@@ -698,5 +698,15 @@
     "message_id": 7748,
     "day": 24,
     "slot": 2
+  },
+  {
+    "date": "2026-11-05",
+    "time": "00:07",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "“Mehnatning tagi — rohat” maqoli nimani uqtiradi?",
+    "url": "https://t.me/toshkent_vohasi/7749",
+    "message_id": 7749,
+    "day": 25,
+    "slot": 3
   }
 ]
