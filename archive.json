@@ -678,5 +678,15 @@
     "message_id": 7746,
     "day": 23,
     "slot": 3
+  },
+  {
+    "date": "2026-11-04",
+    "time": "16:47",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Fotiha marosimi köpinça nimani anglatadi?",
+    "url": "https://t.me/toshkent_vohasi/7747",
+    "message_id": 7747,
+    "day": 24,
+    "slot": 1
   }
 ]
