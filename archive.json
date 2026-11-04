@@ -688,5 +688,15 @@
     "message_id": 7747,
     "day": 24,
     "slot": 1
+  },
+  {
+    "date": "2026-11-04",
+    "time": "21:08",
+    "topic": "Milliy urf-odatlar, marosimlar va qadriyatlar",
+    "question": "Sözana nima?",
+    "url": "https://t.me/toshkent_vohasi/7748",
+    "message_id": 7748,
+    "day": 24,
+    "slot": 2
   }
 ]
