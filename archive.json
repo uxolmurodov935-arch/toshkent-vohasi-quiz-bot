@@ -718,5 +718,15 @@
     "message_id": 7751,
     "day": 25,
     "slot": 1
+  },
+  {
+    "date": "2026-11-05",
+    "time": "21:22",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "“Birlik bor joyda — tiriklik” maqolining ġoyasi nima?",
+    "url": "https://t.me/toshkent_vohasi/7752",
+    "message_id": 7752,
+    "day": 25,
+    "slot": 2
   }
 ]
