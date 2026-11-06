@@ -738,5 +738,15 @@
     "message_id": 7763,
     "day": 26,
     "slot": 3
+  },
+  {
+    "date": "2026-11-06",
+    "time": "16:43",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Doston, ertak va afsonalar qaysi meros turiga kiradi?",
+    "url": "https://t.me/toshkent_vohasi/7767",
+    "message_id": 7767,
+    "day": 26,
+    "slot": 1
   }
 ]
