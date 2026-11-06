@@ -758,5 +758,15 @@
     "message_id": 7768,
     "day": 26,
     "slot": 2
+  },
+  {
+    "date": "2026-11-06",
+    "time": "23:41",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "“Kuntuġmiş” qanday asar turi?",
+    "url": "https://t.me/toshkent_vohasi/7770",
+    "message_id": 7770,
+    "day": 26,
+    "slot": 3
   }
 ]
