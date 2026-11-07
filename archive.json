@@ -788,5 +788,15 @@
     "message_id": 7772,
     "day": 27,
     "slot": 2
+  },
+  {
+    "date": "2026-11-07",
+    "time": "22:11",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Maqom san’ati nimani anglatadi?",
+    "url": "https://t.me/toshkent_vohasi/7773",
+    "message_id": 7773,
+    "day": 27,
+    "slot": 3
   }
 ]
