@@ -768,5 +768,15 @@
     "message_id": 7770,
     "day": 26,
     "slot": 3
+  },
+  {
+    "date": "2026-11-07",
+    "time": "15:50",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Maqollarning asosiy xususiyati nimada?",
+    "url": "https://t.me/toshkent_vohasi/7771",
+    "message_id": 7771,
+    "day": 27,
+    "slot": 1
   }
 ]
