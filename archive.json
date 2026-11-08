@@ -818,5 +818,15 @@
     "message_id": 7775,
     "day": 28,
     "slot": 2
+  },
+  {
+    "date": "2026-11-08",
+    "time": "22:25",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Yoġoç öymakorligi qaysi san’at turiga kiradi?",
+    "url": "https://t.me/toshkent_vohasi/7776",
+    "message_id": 7776,
+    "day": 28,
+    "slot": 3
   }
 ]
