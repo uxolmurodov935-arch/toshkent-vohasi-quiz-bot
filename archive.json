@@ -808,5 +808,15 @@
     "message_id": 7774,
     "day": 28,
     "slot": 1
+  },
+  {
+    "date": "2026-11-08",
+    "time": "19:57",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Baxşi an’anaviy ravişda nima qiladi?",
+    "url": "https://t.me/toshkent_vohasi/7775",
+    "message_id": 7775,
+    "day": 28,
+    "slot": 2
   }
 ]
