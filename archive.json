@@ -798,5 +798,15 @@
     "message_id": 7773,
     "day": 27,
     "slot": 3
+  },
+  {
+    "date": "2026-11-08",
+    "time": "15:59",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "“Şaşmaqom” nomidagi “şaş” sözi qaysi sonni bildiradi?",
+    "url": "https://t.me/toshkent_vohasi/7774",
+    "message_id": 7774,
+    "day": 28,
+    "slot": 1
   }
 ]
