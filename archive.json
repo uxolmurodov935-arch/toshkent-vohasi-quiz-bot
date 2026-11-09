@@ -838,5 +838,15 @@
     "message_id": 7793,
     "day": 29,
     "slot": 1
+  },
+  {
+    "date": "2026-11-09",
+    "time": "23:38",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Iroqi va bosma atamalari milliy san’atda nimaga tegişli?",
+    "url": "https://t.me/toshkent_vohasi/7797",
+    "message_id": 7797,
+    "day": 29,
+    "slot": 2
   }
 ]
