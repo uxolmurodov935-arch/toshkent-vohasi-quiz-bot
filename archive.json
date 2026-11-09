@@ -828,5 +828,15 @@
     "message_id": 7776,
     "day": 28,
     "slot": 3
+  },
+  {
+    "date": "2026-11-09",
+    "time": "17:26",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "“Ona yurting — oltin beşiging” maqoli qanday tuyġuni ifodalaydi?",
+    "url": "https://t.me/toshkent_vohasi/7793",
+    "message_id": 7793,
+    "day": 29,
+    "slot": 1
   }
 ]
