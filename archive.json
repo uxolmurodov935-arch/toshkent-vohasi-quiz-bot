@@ -848,5 +848,15 @@
     "message_id": 7797,
     "day": 29,
     "slot": 2
+  },
+  {
+    "date": "2026-11-10",
+    "time": "02:45",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Tarix, davlat ramzlari, allomalar va qadriyatlarni birgalikda örganiş nimaga yordam beradi?",
+    "url": "https://t.me/toshkent_vohasi/7798",
+    "message_id": 7798,
+    "day": 30,
+    "slot": 3
   }
 ]
