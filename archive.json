@@ -858,5 +858,15 @@
     "message_id": 7798,
     "day": 30,
     "slot": 3
+  },
+  {
+    "date": "2026-11-10",
+    "time": "17:00",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Madaniy merosni asraş nima uçun muhim?",
+    "url": "https://t.me/toshkent_vohasi/7812",
+    "message_id": 7812,
+    "day": 30,
+    "slot": 1
   }
 ]
