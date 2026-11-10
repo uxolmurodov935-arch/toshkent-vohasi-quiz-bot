@@ -868,5 +868,15 @@
     "message_id": 7812,
     "day": 30,
     "slot": 1
+  },
+  {
+    "date": "2026-11-10",
+    "time": "21:21",
+    "topic": "Xalq maqollari va milliy meros",
+    "question": "Qaysi javobda uçta xalq amaliy san’ati turi berilgan?",
+    "url": "https://t.me/toshkent_vohasi/7822",
+    "message_id": 7822,
+    "day": 30,
+    "slot": 2
   }
 ]
